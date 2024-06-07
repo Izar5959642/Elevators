@@ -19,6 +19,7 @@ START_X_POS_ELV = 200
 DIFF_ELV = 50
 
 
+
 BG = (255,255,255)
 BLACK = (0,0,0)
 GREEN = (0, 255, 0)
