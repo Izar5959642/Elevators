@@ -1,4 +1,3 @@
-
 import pygame
 from my_setting import *
 import time
@@ -16,6 +15,8 @@ class Elv:
         self.final_dest = 0
         self.img = pygame.transform.scale(elv_img , (ELV_WIDTH,ELV_HEIGHT))
         self.puse = 0
+        self.mp3 = pygame.mixer.Sound(MP3)
+
 
     def appendReq(self, num_floor , new_total_time):
         #update final dest
@@ -26,14 +27,11 @@ class Elv:
         self.total_time = new_total_time
         self.final_dest = num_floor
 
-        
-
     def calculateTimeForNewReq(self, num_floor):
         diff = abs(self.final_dest - num_floor) * SEC_FOR_FLOOR
         final_time = diff + self.total_time 
         return final_time
         
-
     def upDate(self):
         #update time 
         diff = time.time() - self.last_update_time
@@ -60,20 +58,16 @@ class Elv:
 
             elif self.y_pos < y_floor:
                 self.y_pos += distance
-
-        elif self.puse > 0:   
+        
+        #wait 2 second
+        elif self.puse > 0:  
+            if self.puse == 2:
+                  self.mp3.play()
             self.puse -= diff
         else:
-            self.where_m_i = self.list_req.pop(0) 
-        
+            self.where_m_i = self.list_req.pop(0)   
         return
 
-
-
-        
-
-
-#
 # --------------------------------------
 class Floor:
     def __init__(self , num_floor,elv_img) -> None:
@@ -87,7 +81,6 @@ class Floor:
         self.last_update = time.time()
 
 
-    
     def upDate(self):
         diff = time.time() - self.last_update
         self.last_update = time.time()
@@ -97,23 +90,13 @@ class Floor:
         else:
             self.col_num = BLACK
         self.convertTimeStr()
-
-        
-    def convertTimeStr(self):#----------------------------now
+ 
+    def convertTimeStr(self):
         int_timer = int(self.timer)
         dicimal_timer = (self.timer - int_timer)
         int_timer = str(int_timer)
         dicimal_timer = str(dicimal_timer)
         self.timer_str = int_timer + '.' + dicimal_timer[2:4]
-
-        
-        pass
-
-
-
-
-
-
 
 #--------------------------------
 class Building:
@@ -148,13 +131,11 @@ class Building:
         #sand to the min elv, and setup floor_timer and floor_color
         if self.floors[num_floor].col_num == BLACK:
             self.elevators[mini[1]].appendReq(num_floor,mini[0] + 2)
-            print(mini[1])
+           
             self.floors[num_floor].timer = mini[0]
             self.floors[num_floor].col_num = GREEN
-        
         return
     
-
     def updateAll(self):
         for i in range(NUM_ELV):
             self.elevators[i].upDate()
