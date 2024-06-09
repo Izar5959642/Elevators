@@ -3,6 +3,7 @@ from my_setting import *
 import time
 
 
+#
 class Elv:
     def __init__(self,num_elv , elv_img) -> None:
         self.num_elv =  num_elv
@@ -70,13 +71,13 @@ class Elv:
 
 # --------------------------------------
 class Floor:
-    def __init__(self , num_floor,elv_img) -> None:
+    def __init__(self , num_floor,floor_img) -> None:
         self.num_elv = num_floor
         self.x_pos = START_X_POS_FLOOR
         self.y_pos = ZERO_FLOOR - (FLOOR_HEIGHT * num_floor) 
         self.timer = 0
         self.timer_str = ''
-        self.img = pygame.transform.scale(elv_img, (FLOOR_WIDTH, FLOOR_HEIGHT - LINE_DIFF))
+        self.img = pygame.transform.scale(floor_img, (FLOOR_WIDTH, FLOOR_HEIGHT - LINE_DIFF))
         self.col_num = BLACK
         self.last_update = time.time()
 
@@ -127,7 +128,7 @@ class Building:
             if mini[0] > time_elv_get_floor:
                 mini[0] = time_elv_get_floor
                 mini[1] = i
-
+   
         #sand to the min elv, and setup floor_timer and floor_color
         if self.floors[num_floor].col_num == BLACK:
             self.elevators[mini[1]].appendReq(num_floor,mini[0] + 2)
