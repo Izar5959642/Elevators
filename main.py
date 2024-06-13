@@ -41,9 +41,3 @@ while run:
 # Quit Pygame.
 pygame.quit()
 
-
-            # if pos_click_mouse[0] >= X_END_POS_BUTTEN_CLICK and pos_click_mouse[0] <= (X_END_POS_BUTTEN ):
-            #     ckick_y_mous = pos_click_mouse[1] 
-            #     for i in range(NUM_FLOORS):
-            #         if pos_click_mouse[1] >= my_building.floors[i].y_pos +10 and pos_click_mouse[1] <= my_building.floors[i].y_pos + 50:
-            #              my_building.getNewReq(i)
