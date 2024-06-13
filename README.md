@@ -19,7 +19,7 @@ Elevator Challenge is a simulation program built with Pygame that simulates mult
 
 ## Project Structure
 
-- **`my_pygame.py`**: Initializes the Pygame environment, loads images, initializes the `Building` instance, and runs the main event loop.
+- **`main.py`**: Initializes the Pygame environment, loads images, initializes the `Building` instance, and runs the main event loop.
 - **`my_setting.py`**: Contains configuration constants for display settings, colors, and simulation parameters.
 - **`building_floor_elv.py`**: Contains class definitions for `Building`, `Floor`, `Button`, and `Elv`.
 
