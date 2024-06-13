@@ -5,6 +5,7 @@ WHITE = (255, 255, 255)      # White color
 BLACK = (0, 0, 0)            # Black color
 GREEN = (0, 255, 0)          # Green color
 
+
 # 2. Screen
 SCREEN_WIDTH = 1000          # Screen width
 SCREEN_HEIGHT = 1000         # Screen height

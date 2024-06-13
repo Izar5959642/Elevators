@@ -2,6 +2,8 @@ import pygame
 from my_setting import *
 from building_floor_elv import *
 
+
+
 # Initialize Pygame and set up the screen and window title.
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
