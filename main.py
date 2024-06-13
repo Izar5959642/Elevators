@@ -2,36 +2,41 @@ import pygame
 from my_setting import *
 from building_floor_elv import *
 
-#set the screen + the name window
+# Initialize Pygame and set up the screen and window title.
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 pygame.display.set_caption('Elevator Challenge')
 
-# image background
+# Load and scale the background image.
 img_background = pygame.image.load('/home/mefathim/Desktop/python/ws9_project/new_try/imegs/blackground.jpeg')
 img_background = pygame.transform.scale(img_background, (SCREEN_WIDTH,SCREEN_HEIGHT))
 
-# instance of building
+# Create an instance of the Building class.
 my_building = Building(NUM_ELV,NUM_FLOORS)
 
+# Main loop flag.
 run = True
 while run:
-    
+    # Draw the background image.
     screen.blit(img_background, (0,0))
+    # Update and draw all elevators and floors in the building.
     my_building.updateAll()
     my_building.drawAll(screen)
 
-    # exit mode
+    # Get the current mouse position.
     pos_click_mouse = pygame.mouse.get_pos()
+    # Event handling loop.
     for event in pygame.event.get():
+        # Handle the quit event to exit the program.
         if event.type == pygame.QUIT:
             run = False
      
-        # get new reqeuste from the mouse
+        # Handle mouse button down event to register new requests.
         if event.type == pygame.MOUSEBUTTONDOWN:
             my_building.getMouseClickPos(pos_click_mouse[0], pos_click_mouse[1])
+    # Update the display.
     pygame.display.update()
-
+# Quit Pygame.
 pygame.quit()
 
 
