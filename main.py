@@ -1,6 +1,6 @@
 import pygame
 from my_setting import *
-from building_floor_elv import *
+from building import *
 
 
 
