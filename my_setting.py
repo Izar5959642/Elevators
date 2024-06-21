@@ -1,18 +1,18 @@
 # ! needed to keep the order of the line !
 
 # 1. Colors
-WHITE = (255, 255, 255)      # White color 
-BLACK = (0, 0, 0)            # Black color
-GREEN = (0, 255, 0)          # Green color
+WHITE = (255, 255, 255)     
+BLACK = (0, 0, 0)            
+GREEN = (0, 255, 0)          
 
 
 # 2. Screen
-SCREEN_WIDTH = 1000          # Screen width
-SCREEN_HEIGHT = 1000         # Screen height
+SCREEN_WIDTH = 1000         
+SCREEN_HEIGHT = 1000         
 
 # 3. Floor
-FLOOR_WIDTH = 180            # Floor width
-FLOOR_HEIGHT = 60            # Floor height
+FLOOR_WIDTH = 250           
+FLOOR_HEIGHT = 60            
 LINE_DIFF = 7                # Difference for line drawing
 START_X_POS_FLOOR = 60      # Starting X position for floors
 ZERO_FLOOR = SCREEN_HEIGHT - FLOOR_HEIGHT   # Y position of the ground floor
@@ -35,14 +35,15 @@ X_START_POS_BUTTEN_CLICK = X_START_POS_BUTTON - SIZE_BUTTON  # Start X position 
 COL_BUTTON_ON = GREEN                 # Color of the button when pressed
 COL_BUTTON_OFF = BLACK                # Color of the button when not pressed
 
+
 # 5. Elevator
 START_X_POS_ELV = START_X_POS_FLOOR + FLOOR_WIDTH + 10  # Starting X position for elevators
 ELV_WIDTH = 50                      # Elevator width
 ELV_HEIGHT = FLOOR_HEIGHT - 10      # Elevator height
 DIFF_ELV = ELV_WIDTH                # Difference in position between elevators
-NUM_ELV = 3                         # Number of elevators
+NUM_ELV = 5                        # Number of elevators
 IMG_ELV = "/home/mefathim/Desktop/python/ws9_project/new_try/imegs/elv.png" # Image file for elevators
-MP3 = "/home/mefathim/Desktop/python/ws9_project/new_try/mp3_file/ding.mp3"                    # Sound file for elevator arrival
+MP3 = "/home/mefathim/Desktop/python/ws9_project/new_try/mp3_file/ding.mp3" # Sound file for elevator arrival
 PUSE = 2                            # Pause duration in seconds
 
 # 6. Roof
